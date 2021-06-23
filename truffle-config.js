@@ -78,6 +78,15 @@ module.exports = {
       gasPrice: 10000000000
     },
 
+    testnet: {
+      provider: () => new HDWalletProvider(
+        process.env.PRIVATE_KEY,
+        process.env.BSC_TEST_HTTPS
+      ),
+      network_id: 97,
+      gasPrice: 10000000000
+    },
+
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),

@@ -32,6 +32,7 @@ const bakeryRouter = new web3.eth.Contract(
 );
 
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
+
 const fromTokens = ['WBNB'];
 const fromToken = [
     '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c' // WBNB
@@ -50,7 +51,8 @@ const init = async () => {
 
     const flashswap = new web3.eth.Contract(
         Flashswap.abi,
-        Flashswap.networks[networkId].address
+        //Flashswap.networks[networkId].address
+        process.env.FLASHLOAN_CONTRACT_ADDRRESS
     );
 
     let subscription = web3.eth.subscribe('newBlockHeaders', (error, result) => {
